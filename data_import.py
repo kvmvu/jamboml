@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import flat_table
 
 from sqlalchemy import create_engine, exc
 from keys import conn_str
@@ -14,13 +15,7 @@ def get_sales():
         read_content = json.load(sales_data)
         df = pd.json_normalize(read_content)
 
-    # Clean up Variants and Payments columns
-    payments_data = pd.DataFrame(df['Payments'].values.tolist())[0]
-    variants_data = pd.DataFrame(df['Variants'].values.tolist())[0]
-    payments = pd.DataFrame.from_records(payments_data)
-    variants = pd.DataFrame.from_records(variants_data)
-    new_df = pd.concat([df, payments, variants], axis=1)
-    new_df.drop(['Payments', 'Variants'], axis=1, inplace=True)
+    new_df = flat_table.normalize(df)
     return new_df
 
 
