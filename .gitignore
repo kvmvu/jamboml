@@ -4,3 +4,7 @@ mpesa-payments.csv
 sales_from_start.json
 .idea
 .gitignore
+inventory.json
+suppliers.json
+customers.json
+mpesa_kopokopo.csv
