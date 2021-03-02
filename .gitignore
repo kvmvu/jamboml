@@ -12,3 +12,6 @@ test.csv
 train.csv
 timeseries.ipynb
 dataprep.ipynb
+customers.ipynb
+data_import.py
+inventory.ipynb
