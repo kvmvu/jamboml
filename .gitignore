@@ -8,3 +8,6 @@ inventory.json
 suppliers.json
 customers.json
 mpesa_kopokopo.csv
+test.csv
+train.csv
+timeseries.ipynb
