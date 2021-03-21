@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% load plotly_dash %}
+    <div class="{% plotly_class name='dash_integration_id' %} card" style="height: 100%; width: 100%">
+    {% plotly_app name='dash_integration_id' ratio=0.45 %}
+    </div>
+
+{% endblock %}
